@@ -11,8 +11,8 @@ package locationvoiture;
  */
 public class RentCar extends Cars{
     
-    public RentCar(int noImma, int nbPassagerMax, int prixJour, int km, int nbLocation, boolean statut) {
-        super(noImma, nbPassagerMax, prixJour, km, nbLocation, statut);
+    public RentCar() {
+        
     }
     
     
