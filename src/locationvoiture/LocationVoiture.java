@@ -11,31 +11,15 @@ import java.util.Scanner;
 public class LocationVoiture {
   
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+    private static Scanner scan = new Scanner(System.in);
+    
+>>>>>>> 30616d4e6ea3de69c5a7430ba6fb101aaad5f974
     /**
      * @param args the command line arguments
      */
-    public static void main(String[] args) {
-        
-        Scanner saisie = new Scanner(System.in);
-        int noImma, nbPassagerMax, prixJour, km, nbLocation;
-        boolean statut;
-        
-        // Menu 
-        
-        // Demande de saisie de l'utilisateur pour un nouveau véhicule
-        print(" Entrez le numéro immatricualation :");
-        noImma = saisie.nextInt();
-        print(" Entrez le nombre de passager maximum :");
-        nbPassagerMax = saisie.nextInt();
-        print(" Entrez le numéro immatricualation :");
-        noImma = saisie.nextInt();
-        print(" Entrez le numéro immatricualation :");
-        noImma = saisie.nextInt();
-        print(" Entrez le numéro immatricualation :");
-        noImma = saisie.nextInt();
-        print(" Entrez le numéro immatricualation :");
-        noImma = saisie.nextInt();
-        
+    public static void main(String[] args) {      
         
     }
     
