@@ -11,8 +11,8 @@ package locationvoiture;
  */
 public class SUV extends Cars{
     
-    public SUV(int noImma, int nbPassagerMax, int prixJour, int km, int nbLocation, boolean statut) {
-        super(noImma, nbPassagerMax, prixJour, km, nbLocation, statut);
+    public SUV(){
+        this.type = "SUV";
     }
     
 }

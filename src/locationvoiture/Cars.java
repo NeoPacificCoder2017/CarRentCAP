@@ -11,28 +11,34 @@ package locationvoiture;
  */
 public class Cars {
     
-    protected int noImma, nbPassagerMax, prixJour, km, nbLocation;
+    protected int immatriculation, nbPassagerMax, prixJour, km, nbLocation;
     protected boolean statut;
+    protected String type; //nom du modèle
+    
+    public Cars(){
+        
+    }
 
-    public Cars(int noImma, int nbPassagerMax, int prixJour, int km, int nbLocation, boolean statut) {
-        this.noImma = noImma;
+    public Cars(int noImma, int nbPassagerMax, int prixJour, String type) {
+        this.immatriculation = noImma;
         this.nbPassagerMax = nbPassagerMax;
         this.prixJour = prixJour;
-        this.km = km;
-        this.nbLocation = nbLocation;
-        this.statut = statut;
+        this.km = 0;
+        this.nbLocation = 0;
+        this.statut = true; // true = dispo
+        this.type = type;
     }
 
-    public int getNoImma() {
-        return noImma;
+    public int getImmatriculation() {
+        return this.immatriculation;
     }
 
-    public void setNoImma(int noImma) {
-        this.noImma = noImma;
+    public void setImmatriculation(int immatriculation) {
+        this.immatriculation = immatriculation;
     }
 
     public int getNbPassagerMax() {
-        return nbPassagerMax;
+        return this.nbPassagerMax;
     }
 
     public void setNbPassagerMax(int nbPassagerMax) {
@@ -40,7 +46,7 @@ public class Cars {
     }
 
     public int getPrixJour() {
-        return prixJour;
+        return this.prixJour;
     }
 
     public void setPrixJour(int prixJour) {
@@ -48,7 +54,7 @@ public class Cars {
     }
 
     public int getKm() {
-        return km;
+        return this.km;
     }
 
     public void setKm(int km) {
@@ -56,7 +62,7 @@ public class Cars {
     }
 
     public int getNbLocation() {
-        return nbLocation;
+        return this.nbLocation;
     }
 
     public void setNbLocation(int nbLocation) {
@@ -64,11 +70,19 @@ public class Cars {
     }
 
     public boolean isStatut() {
-        return statut;
+        return this.statut;
     }
 
     public void setStatut(boolean statut) {
         this.statut = statut;
+    }  
+
+    public String getNom() {
+        return this.type;
+    }
+
+    public void setNom(String nom) {
+        this.type = nom;
     }
     
     
