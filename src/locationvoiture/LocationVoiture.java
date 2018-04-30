@@ -6,37 +6,23 @@ import java.util.*;
  * @author eleve9
  */
 public class LocationVoiture {
+    
+    private static Scanner scan = new Scanner(System.in);
   
     /**
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        
-        Scanner saisie = new Scanner(System.in);
-        int noImma, nbPassagerMax, prixJour, km, nbLocation;
-        boolean statut;
-        
-        // Menu 
-        
-        // Demande de saisie de l'utilisateur pour un nouveau véhicule
-        print(" Entrez le numéro immatricualation :");
-        noImma = saisie.nextInt();
-        print(" Entrez le nombre de passager maximum :");
-        nbPassagerMax = saisie.nextInt();
-        print(" Entrez le numéro immatricualation :");
-        noImma = saisie.nextInt();
-        print(" Entrez le numéro immatricualation :");
-        noImma = saisie.nextInt();
-        print(" Entrez le numéro immatricualation :");
-        noImma = saisie.nextInt();
-        print(" Entrez le numéro immatricualation :");
-        noImma = saisie.nextInt();
-        
-        
+        displayMainMenu();
     }
     
     public static void print(Object a){
         System.out.print(a);
     }
     
+    private static void displayMainMenu() {
+        System.out.println("\n*********************************");
+        System.out.println("Sélectionner une option \n\n\t 1. Acquérir voiture \n\t 2. Enregistrer nouveau client \n\t 3. Louer véhicule \n\t 4. Rendre véhicule \n\t 0. Quitter\n");
+        print("Votre choix: ");
+    }
 }
