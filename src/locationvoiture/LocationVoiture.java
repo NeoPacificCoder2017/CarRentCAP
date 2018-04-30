@@ -1,25 +1,9 @@
 package locationvoiture;
 import java.util.*;
 
-
-<<<<<<< HEAD
-import java.util.*;
-
-/**
- *
- * @author eleve9
- */
-=======
->>>>>>> fdee56e6ce16ea64cfa9e02b561ea00255f5a339
 public class LocationVoiture {
   
   public static void main(String[] args) { 
-
-<<<<<<< HEAD
-    /**
-     * @param args the command line arguments
-     */
-    public static void main(String[] args) {
         
         Scanner saisie = new Scanner(System.in);
         int noImma, nbPassagerMax, prixJour, km, nbLocation;
@@ -49,7 +33,3 @@ public class LocationVoiture {
     }
     
 }
-=======
-  }
-}  
->>>>>>> fdee56e6ce16ea64cfa9e02b561ea00255f5a339

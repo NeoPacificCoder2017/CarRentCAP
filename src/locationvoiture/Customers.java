@@ -3,10 +3,10 @@ package locationvoiture;
 
 public class Customers {
     // Propriétés
-    protected String lastname;
-    protected String firstname;
-    protected int age;
-    protected int numberLicence;
+    private String lastname;
+    private String firstname;
+    private int age;
+    private int numberLicence;
     
     // Constructeur avec arguments
      public Customers(String lastname, String firstname, int age, int numberLicence) {
