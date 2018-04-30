@@ -1,59 +1,54 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package locationvoiture;
 
-/**
- *
- * @author eleve9
- */
+
 public class Customers {
     // Propriétés
-    protected String nom, prenom;
-    protected int age, noPermis;
+    protected String lastname;
+    protected String firstname;
+    protected int age;
+    protected int numberLicence;
     
     // Constructeur avec arguments
-     public Customers(String nom, String prenom, int age, int noPermis) {
-        this.nom = nom;
-        this.prenom = prenom;
-        this.age = age;
-        this.noPermis = noPermis;
+     public Customers(String lastname, String firstname, int age, int numberLicence) {
+       this.lastname = lastname;
+       this.firstname = firstname;
+       this.age = age;
+       this.numberLicence = numberLicence;
     }
-
-    public String getNom() {
-        return nom;
-    }
-
-    public void setNom(String nom) {
-        this.nom = nom;
-    }
-
-    public String getPrenom() {
-        return prenom;
-    }
-
-    public void setPrenom(String prenom) {
-        this.prenom = prenom;
-    }
-
-    public int getAge() {
-        return age;
-    }
-
-    public void setAge(int age) {
-        this.age = age;
-    }
-
-    public int getNoPermis() {
-        return noPermis;
-    }
-
-    public void setNoPermis(int noPermis) {
-        this.noPermis = noPermis;
-    }
-    
-    
+     
+     //Accesseurs 
+     public String getLastname(){
+       return this.lastname;
+     }
+     
+     public void setLastname(String lastname ){
+       this.lastname = lastname;
+     }
+     
+     public String getFirstname(){
+       return this.firstname;
+     }
+     
+     public void setFirstname(String firstname ){
+       this.firstname = firstname;
+     }
+     
+     public int getAge(){
+       return this.age;
+     }
+     
+     public void setage(int age ){
+       this.age = age;
+     }
+     
+     public int getNumLicence(){
+       return this.numberLicence;
+     }
+     
+     public void setNumberLicence(int numberLicence ){
+       this.numberLicence = numberLicence;
+     }
+     
+     //Fonction qui seras appeler dans le "Main"
     
 }
