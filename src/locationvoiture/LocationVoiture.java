@@ -12,17 +12,12 @@ public class LocationVoiture {
     
     private static Scanner scan = new Scanner(System.in);
   
-    private static Scanner scan = new Scanner(System.in);
     
     /**
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-<<<<<<< HEAD
         
-=======
-        displayMainMenu();
->>>>>>> affichageMain
     }
     
     public static void print(Object a){
