@@ -10,43 +10,17 @@ import java.util.Scanner;
  */
 public class LocationVoiture {
   
-<<<<<<< HEAD
+    private static Scanner scan = new Scanner(System.in);
+    
     /**
      * @param args the command line arguments
      */
     public static void main(String[] args) {
         
-        Scanner saisie = new Scanner(System.in);
-        int noImma, nbPassagerMax, prixJour, km, nbLocation;
-        boolean statut;
-        
-        // Menu 
-        
-        // Demande de saisie de l'utilisateur pour un nouveau véhicule
-        print(" Entrez le numéro immatricualation :");
-        noImma = saisie.nextInt();
-        print(" Entrez le nombre de passager maximum :");
-        nbPassagerMax = saisie.nextInt();
-        print(" Entrez le numéro immatricualation :");
-        noImma = saisie.nextInt();
-        print(" Entrez le numéro immatricualation :");
-        noImma = saisie.nextInt();
-        print(" Entrez le numéro immatricualation :");
-        noImma = saisie.nextInt();
-        print(" Entrez le numéro immatricualation :");
-        noImma = saisie.nextInt();
-        
-        
     }
     
     public static void print(Object a){
         System.out.print(a);
-=======
-  private static final Scanner scan = new Scanner(System.in);
-
-  public static void main(String[] args) {
-
-  ArrayList<Customers> customer = new ArrayList<Customers>();
 
   }
 
@@ -54,10 +28,6 @@ public class LocationVoiture {
 
   public static void println(Object a){
       System.out.println(a);
-  }
-
-  public static void print(Object a){
-      System.out.print(a);
   }
 
   //////////////////////////////Ajouter un nouveau client///////////////////////////////////////
@@ -92,7 +62,6 @@ public class LocationVoiture {
             index++;
               println("\n" + index + space + customer.getLastname() + space + customer.getFirstname() + space + customer.getAge());
           }
->>>>>>> affichageCustomer
     }
     
 }
