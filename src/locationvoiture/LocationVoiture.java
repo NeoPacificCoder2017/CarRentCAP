@@ -66,9 +66,17 @@ public class LocationVoiture {
     }
     
     private static void displayMainMenu() {
-        System.out.println("\n*********************************");
-        System.out.println("Sélectionner une option \n\n\t 1. Acquérir voiture \n\t 2. Enregistrer nouveau client \n\t 3. Louer véhicule \n\t 4. Rendre véhicule \n\t 0. Quitter\n");
+        println("\n*********************************");
+        println("Sélectionner une option \n\n\t 1. Acquérir voiture \n\t 2. Enregistrer nouveau client \n\t 3. Louer véhicule \n\t 4. Rendre véhicule \n\t 0. Quitter\n");
         print("Votre choix: ");
     }
+    
+    private static void displayRent(ArrayList<Rent> rents, int value) {
+        Rent rent = rents.get(value);
+        
+        println("\n************** Location *******************");
+        println("\n Location n°: " + rent.getCode() + "\n Voiture immatriculée: " + rent.getCar().getImmatriculation() + "\n Louée par: " + rent.getCustomer().getLastname() + " " + rent.getCustomer().getFirstname());
+    }
+    
 }
 
