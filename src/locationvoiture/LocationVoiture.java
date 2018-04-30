@@ -45,4 +45,8 @@ public class LocationVoiture {
         System.out.print(a);
     }
     
+    public static void stockCars() {
+        
+    }
+    
 }
