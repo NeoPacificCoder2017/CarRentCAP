@@ -20,14 +20,8 @@ public class LocationVoiture {
     }
     
     public static void print(Object a){
-<<<<<<< HEAD
       System.out.print(a);
-
-=======
-        System.out.print(a);
->>>>>>> b5ae7e8b36872d149a81c96b2b4e47102769b22e
     }
-
     //////////////////////////////Function print///////////////////////////////////////
 
     public static void println(Object a){
@@ -58,16 +52,9 @@ public class LocationVoiture {
     ////////////////////////////Affichage des client enregistrer/////////////////////////////////////
     
     public static void listCustomer(ArrayList<Customers> customers){
-<<<<<<< HEAD
       int index = 0;
       String space = " ";
       println("Voici la liste des types des clients1: ");
-=======
-        int index = 0;
-        String space = " ";
-        println("Voici la liste des types des clients1: ");
-        
->>>>>>> b5ae7e8b36872d149a81c96b2b4e47102769b22e
         for( Customers customer : customers ){
           index++;
             println("\n" + index + space + customer.getLastname() + space + customer.getFirstname() + space + customer.getAge());
@@ -81,14 +68,11 @@ public class LocationVoiture {
     }
     
     private static void displayRent(ArrayList<Rent> rents, int value) {
-        Rent rent = rents.get(value);
-        
-        println("\n************** Location *******************");
-        println("\n Location n°: " + rent.getCode() + "\n Voiture immatriculée: " + rent.getCar().getImmatriculation() + "\n Louée par: " + rent.getCustomer().getLastname() + " " + rent.getCustomer().getFirstname());
-<<<<<<< HEAD
+      Rent rent = rents.get(value);
 
-=======
->>>>>>> b5ae7e8b36872d149a81c96b2b4e47102769b22e
+      println("\n************** Location *******************");
+      println("\n Location n°: " + rent.getCode() + "\n Voiture immatriculée: " + rent.getCar().getImmatriculation() + "\n Louée par: " + rent.getCustomer().getLastname() + " " + rent.getCustomer().getFirstname());
+
     }
     
 }
