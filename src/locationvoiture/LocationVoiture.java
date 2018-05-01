@@ -17,7 +17,7 @@ public class LocationVoiture {
     }
     
     public static void print(Object a){
-        System.out.print(a);
+      System.out.print(a);
     }
     
 }
