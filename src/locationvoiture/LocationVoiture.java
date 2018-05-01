@@ -75,5 +75,12 @@ public class LocationVoiture {
 
     }
     
+    /////////////////////////////////Affficher la liste des différents type de véhicuel//////////////
+    
+    private static void listTypeVehicle(){
+      println("\n*********************************");
+      println("Sélectionner le type de véhicule: \n\t 1. Citadine \n\t 2. Berline \n\t 3. SUV");
+      print("Votre choix: "); 
+    }
 }
 
