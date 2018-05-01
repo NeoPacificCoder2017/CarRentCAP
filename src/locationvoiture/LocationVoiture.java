@@ -9,75 +9,58 @@ import java.util.Scanner;
  * @author eleve9
  */
 public class LocationVoiture {
-<<<<<<< HEAD
 
     private static Scanner scan = new Scanner(System.in);
-    /**
-     * @param args the command line arguments
-     */
-    public static void main(String[] args) {      
-=======
-    
-    private static Scanner scan = new Scanner(System.in);
-  
     
     /**
      * @param args the command line arguments
      */
     public static void main(String[] args) {
->>>>>>> 888071f6092b079d299fa755ea2eb1f937f0e15e
         
     }
     
     public static void print(Object a){
         System.out.print(a);
-<<<<<<< HEAD
-=======
-
-  }
->>>>>>> 888071f6092b079d299fa755ea2eb1f937f0e15e
-
     }
-  //////////////////////////////Function print///////////////////////////////////////
 
-  public static void println(Object a){
-      System.out.println(a);
-  }
+    //////////////////////////////Function print///////////////////////////////////////
 
-  //////////////////////////////Ajouter un nouveau client///////////////////////////////////////
+    public static void println(Object a){
+        System.out.println(a);
+    }
 
-  public static Customers addNewCustomer(){
-    println("*********************************"
-      + "\n*********************************");
-    println("Ajouter un nouveau client: ");
+    //////////////////////////////Ajouter un nouveau client///////////////////////////////////////
 
-    print("Nom: ");
-      String lastName = scan.next();
+    public static Customers addNewCustomer(){
+        println("*********************************"
+        + "\n*********************************");
+        println("Ajouter un nouveau client: ");
 
-    print("Prénom: ");
-      String firstName = scan.next();
+        print("Nom: ");
+        String lastName = scan.next();
 
-    print("Age: ");
-      int age = scan.nextInt();
+        print("Prénom: ");
+        String firstName = scan.next();
 
-    print("N° Permis: ");
-      int numberLicence = scan.nextInt();
-      return new Customers(firstName, lastName, age, numberLicence);
+        print("Age: ");
+        int age = scan.nextInt();
 
-  }
+        print("N° Permis: ");
+        int numberLicence = scan.nextInt();
+        return new Customers(firstName, lastName, age, numberLicence);
+    }
     
     ////////////////////////////Affichage des client enregistrer/////////////////////////////////////
     
     public static void listCustomer(ArrayList<Customers> customers){
-      int index = 0;
-      String space = " ";
-      println("Voici la liste des types des clients1: ");
-          for( Customers customer : customers ){
-            index++;
-              println("\n" + index + space + customer.getLastname() + space + customer.getFirstname() + space + customer.getAge());
-          }
-<<<<<<< HEAD
-=======
+        int index = 0;
+        String space = " ";
+        println("Voici la liste des types des clients1: ");
+        
+        for( Customers customer : customers ){
+          index++;
+            println("\n" + index + space + customer.getLastname() + space + customer.getFirstname() + space + customer.getAge());
+        }
     }
     
     private static void displayMainMenu() {
@@ -91,7 +74,6 @@ public class LocationVoiture {
         
         println("\n************** Location *******************");
         println("\n Location n°: " + rent.getCode() + "\n Voiture immatriculée: " + rent.getCar().getImmatriculation() + "\n Louée par: " + rent.getCustomer().getLastname() + " " + rent.getCustomer().getFirstname());
->>>>>>> 888071f6092b079d299fa755ea2eb1f937f0e15e
     }
     
 }
