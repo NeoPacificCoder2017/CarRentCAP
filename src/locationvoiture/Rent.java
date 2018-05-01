@@ -11,6 +11,8 @@ package locationvoiture;
  */
 public class Rent {
     
+    private static int COUNT = 0;
+    
     private int code;
     private Cars car;
     private Customers customer;
@@ -19,6 +21,7 @@ public class Rent {
     
     public Rent(Cars car, Customers customer, int period) {
         
+        this.code = COUNT++;
         this.car = car;
         this.customer = customer;
         this.period = period;
