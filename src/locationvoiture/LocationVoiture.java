@@ -9,13 +9,8 @@ import java.util.Scanner;
  * @author eleve9
  */
 public class LocationVoiture {
-  
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
+
     private static Scanner scan = new Scanner(System.in);
-    
->>>>>>> 30616d4e6ea3de69c5a7430ba6fb101aaad5f974
     /**
      * @param args the command line arguments
      */
@@ -25,23 +20,12 @@ public class LocationVoiture {
     
     public static void print(Object a){
         System.out.print(a);
-=======
-  private static final Scanner scan = new Scanner(System.in);
 
-  public static void main(String[] args) {
-
-  ArrayList<Customers> customer = new ArrayList<Customers>();
-
-  }
-
+    }
   //////////////////////////////Function print///////////////////////////////////////
 
   public static void println(Object a){
       System.out.println(a);
-  }
-
-  public static void print(Object a){
-      System.out.print(a);
   }
 
   //////////////////////////////Ajouter un nouveau client///////////////////////////////////////
@@ -76,7 +60,6 @@ public class LocationVoiture {
             index++;
               println("\n" + index + space + customer.getLastname() + space + customer.getFirstname() + space + customer.getAge());
           }
->>>>>>> affichageCustomer
     }
     
 }
