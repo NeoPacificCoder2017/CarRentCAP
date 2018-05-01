@@ -20,43 +20,54 @@ public class LocationVoiture {
     }
     
     public static void print(Object a){
+<<<<<<< HEAD
       System.out.print(a);
 
+=======
+        System.out.print(a);
+>>>>>>> b5ae7e8b36872d149a81c96b2b4e47102769b22e
     }
-  //////////////////////////////Function print///////////////////////////////////////
 
-  public static void println(Object a){
-      System.out.println(a);
-  }
+    //////////////////////////////Function print///////////////////////////////////////
 
-  //////////////////////////////Ajouter un nouveau client///////////////////////////////////////
+    public static void println(Object a){
+        System.out.println(a);
+    }
 
-  public static Customers addNewCustomer(){
-    println("*********************************"
-      + "\n*********************************");
-    println("Ajouter un nouveau client: ");
+    //////////////////////////////Ajouter un nouveau client///////////////////////////////////////
 
-    print("Nom: ");
-      String lastName = scan.next();
+    public static Customers addNewCustomer(){
+        println("*********************************"
+        + "\n*********************************");
+        println("Ajouter un nouveau client: ");
 
-    print("Prénom: ");
-      String firstName = scan.next();
+        print("Nom: ");
+        String lastName = scan.next();
 
-    print("Age: ");
-      int age = scan.nextInt();
+        print("Prénom: ");
+        String firstName = scan.next();
 
-    print("N° Permis: ");
-      int numberLicence = scan.nextInt();
-      return new Customers(firstName, lastName, age, numberLicence);
+        print("Age: ");
+        int age = scan.nextInt();
 
-  }
+        print("N° Permis: ");
+        int numberLicence = scan.nextInt();
+        return new Customers(firstName, lastName, age, numberLicence);
+    }
     
     ////////////////////////////Affichage des client enregistrer/////////////////////////////////////
     
     public static void listCustomer(ArrayList<Customers> customers){
+<<<<<<< HEAD
       int index = 0;
       String space = " ";
       println("Voici la liste des types des clients1: ");
+=======
+        int index = 0;
+        String space = " ";
+        println("Voici la liste des types des clients1: ");
+        
+>>>>>>> b5ae7e8b36872d149a81c96b2b4e47102769b22e
         for( Customers customer : customers ){
           index++;
             println("\n" + index + space + customer.getLastname() + space + customer.getFirstname() + space + customer.getAge());
@@ -74,7 +85,10 @@ public class LocationVoiture {
         
         println("\n************** Location *******************");
         println("\n Location n°: " + rent.getCode() + "\n Voiture immatriculée: " + rent.getCar().getImmatriculation() + "\n Louée par: " + rent.getCustomer().getLastname() + " " + rent.getCustomer().getFirstname());
+<<<<<<< HEAD
 
+=======
+>>>>>>> b5ae7e8b36872d149a81c96b2b4e47102769b22e
     }
     
 }
