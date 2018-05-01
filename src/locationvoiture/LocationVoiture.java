@@ -9,17 +9,33 @@ import java.util.Scanner;
  * @author eleve9
  */
 public class LocationVoiture {
+<<<<<<< HEAD
 
     private static Scanner scan = new Scanner(System.in);
     /**
      * @param args the command line arguments
      */
     public static void main(String[] args) {      
+=======
+    
+    private static Scanner scan = new Scanner(System.in);
+  
+    
+    /**
+     * @param args the command line arguments
+     */
+    public static void main(String[] args) {
+>>>>>>> 888071f6092b079d299fa755ea2eb1f937f0e15e
         
     }
     
     public static void print(Object a){
         System.out.print(a);
+<<<<<<< HEAD
+=======
+
+  }
+>>>>>>> 888071f6092b079d299fa755ea2eb1f937f0e15e
 
     }
   //////////////////////////////Function print///////////////////////////////////////
@@ -60,6 +76,22 @@ public class LocationVoiture {
             index++;
               println("\n" + index + space + customer.getLastname() + space + customer.getFirstname() + space + customer.getAge());
           }
+<<<<<<< HEAD
+=======
+    }
+    
+    private static void displayMainMenu() {
+        println("\n*********************************");
+        println("Sélectionner une option \n\n\t 1. Acquérir voiture \n\t 2. Enregistrer nouveau client \n\t 3. Louer véhicule \n\t 4. Rendre véhicule \n\t 0. Quitter\n");
+        print("Votre choix: ");
+    }
+    
+    private static void displayRent(ArrayList<Rent> rents, int value) {
+        Rent rent = rents.get(value);
+        
+        println("\n************** Location *******************");
+        println("\n Location n°: " + rent.getCode() + "\n Voiture immatriculée: " + rent.getCar().getImmatriculation() + "\n Louée par: " + rent.getCustomer().getLastname() + " " + rent.getCustomer().getFirstname());
+>>>>>>> 888071f6092b079d299fa755ea2eb1f937f0e15e
     }
     
 }
