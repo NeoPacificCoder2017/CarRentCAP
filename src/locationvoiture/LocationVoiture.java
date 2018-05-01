@@ -9,33 +9,18 @@ import java.util.Scanner;
  * @author eleve9
  */
 public class LocationVoiture {
-<<<<<<< HEAD
 
     private static Scanner scan = new Scanner(System.in);
-    /**
-     * @param args the command line arguments
-     */
-    public static void main(String[] args) {      
-=======
-    
-    private static Scanner scan = new Scanner(System.in);
-  
     
     /**
      * @param args the command line arguments
      */
     public static void main(String[] args) {
->>>>>>> 888071f6092b079d299fa755ea2eb1f937f0e15e
         
     }
     
     public static void print(Object a){
-        System.out.print(a);
-<<<<<<< HEAD
-=======
-
-  }
->>>>>>> 888071f6092b079d299fa755ea2eb1f937f0e15e
+      System.out.print(a);
 
     }
   //////////////////////////////Function print///////////////////////////////////////
@@ -72,12 +57,10 @@ public class LocationVoiture {
       int index = 0;
       String space = " ";
       println("Voici la liste des types des clients1: ");
-          for( Customers customer : customers ){
-            index++;
-              println("\n" + index + space + customer.getLastname() + space + customer.getFirstname() + space + customer.getAge());
-          }
-<<<<<<< HEAD
-=======
+        for( Customers customer : customers ){
+          index++;
+            println("\n" + index + space + customer.getLastname() + space + customer.getFirstname() + space + customer.getAge());
+        }
     }
     
     private static void displayMainMenu() {
@@ -91,7 +74,7 @@ public class LocationVoiture {
         
         println("\n************** Location *******************");
         println("\n Location n°: " + rent.getCode() + "\n Voiture immatriculée: " + rent.getCar().getImmatriculation() + "\n Louée par: " + rent.getCustomer().getLastname() + " " + rent.getCustomer().getFirstname());
->>>>>>> 888071f6092b079d299fa755ea2eb1f937f0e15e
+
     }
     
 }
