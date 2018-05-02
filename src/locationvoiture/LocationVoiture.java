@@ -13,36 +13,45 @@ import java.util.*;
  */
 public class LocationVoiture {
 
-    /**
-     * @param args the command line arguments
-     */
-    public static void main(String[] args) {
-        
-        Scanner saisie = new Scanner(System.in);
-        int noImma, nbPassagerMax, prixJour, km, nbLocation;
-        boolean statut;
-        
-        // Menu 
-        
-        // Demande de saisie de l'utilisateur pour un nouveau véhicule
-        print(" Entrez le numéro immatricualation :");
-        noImma = saisie.nextInt();
-        print(" Entrez le nombre de passager maximum :");
-        nbPassagerMax = saisie.nextInt();
-        print(" Entrez le numéro immatricualation :");
-        noImma = saisie.nextInt();
-        print(" Entrez le numéro immatricualation :");
-        noImma = saisie.nextInt();
-        print(" Entrez le numéro immatricualation :");
-        noImma = saisie.nextInt();
-        print(" Entrez le numéro immatricualation :");
-        noImma = saisie.nextInt();
-        
-        
+    private static Scanner scan = new Scanner(System.in);
+    
+    public static void main(String[] args) {        
+        ArrayList<Rent> stockCars = new ArrayList<Rent>();
     }
     
-    public static void print(Object a){
+    private static void print(Object a){
         System.out.print(a);
+    }
+    
+    private static void afficheMontantAPayer(ArrayList<Rent> tabs) {
+        
+        Rent rent = null;
+        print("*************** Retour Véhicule ***************");
+        do {        
+            print("\nSaisissez le numéro de location : ");
+            int noL = scan.nextInt();
+            rent = rechercheVehiculeLoue(tabs, noL);
+            if(rent == null){
+                print("\nLe numéro saisie n'existe pas, veuillez réessayer.");
+            }
+        }while(rent == null);
+        
+        print("\nLe montant à payer est de : " + rent.getCost());
+    }
+    
+    private static Rent rechercheVehiculeLoue(ArrayList<Rent> tabs, int noLoc){
+        Rent rent = null; 
+        
+        for(Rent tab : tabs) {
+            if (noLoc == tab.getCode()) {
+                rent = tab;
+            }
+        }
+        return rent; 
+    }
+    
+    private static void initNvlleVoiture(){
+        
     }
     
 }
