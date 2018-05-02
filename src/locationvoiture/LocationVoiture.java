@@ -11,7 +11,7 @@ import java.util.Scanner;
 public class LocationVoiture {
 
     private static Scanner scan = new Scanner(System.in);
-    
+    ArrayList<Cars> vehicle = new ArrayList<Cars>();
     /**
      * @param args the command line arguments
      */
@@ -82,6 +82,18 @@ public class LocationVoiture {
       println("Liste des types de véhicule");
       println("Sélectionner le type de véhicule: \n\t 1. Citadine \n\t 2. Berline \n\t 3. SUV");
       print("Votre choix: "); 
+    }  
+    
+    /////////////////////////////////Affficher la liste des différents véhicule par type//////////////
+    
+    public static void listVehiculeByType(ArrayList<Cars> vehicles, String type){
+      int index = 0;
+      for(Cars vehicle : vehicles){
+        if(vehicle.getNom() == type && vehicle.isStatut()){
+          index++;
+          print(index + ". " + vehicle.getNbPassagerMax() + " " + vehicle.getPrixJour() + " disponibilité: " + vehicle.isStatut());
+        }
+      }
     }
 }
 
