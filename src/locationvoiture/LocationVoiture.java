@@ -14,6 +14,7 @@ public class LocationVoiture {
      */
     public static void main(String[] args) {
       ArrayList<Cars> vehicles = new ArrayList<Cars>();
+      ArrayList<Rent> rents = new ArrayList<Rent>();
     }
     
     public static void print(Object a){
