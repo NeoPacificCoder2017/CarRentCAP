@@ -26,6 +26,10 @@ public class LocationVoiture {
         for(int i = 0; i < noms.length; i++) {
             customers.add(new Customers(prenoms[i], noms[i], ages[i], permis[i]));
         }
+      
+        // création d'un client
+        Customers c = addNewCustomer();
+        customers.add(c);
     }
     
     public static void print(Object a){
