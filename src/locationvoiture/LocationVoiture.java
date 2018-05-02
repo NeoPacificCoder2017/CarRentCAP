@@ -17,7 +17,7 @@ public class LocationVoiture {
       ArrayList<Rent> rents = new ArrayList<Rent>();
       
       Customers c = addNewCustomer();
-        customers.add(c);
+      customers.add(c);
     }
     
     public static void print(Object a){
