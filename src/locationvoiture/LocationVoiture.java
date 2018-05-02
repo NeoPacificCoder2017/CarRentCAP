@@ -1,9 +1,6 @@
 package locationvoiture;
 import java.util.*;
 
-import java.util.ArrayList;
-import java.util.Scanner;
-
 /**
  *
  * @author eleve9
@@ -83,5 +80,33 @@ public class LocationVoiture {
       println("Sélectionner le type de véhicule: \n\t 1. Citadine \n\t 2. Berline \n\t 3. SUV");
       print("Votre choix: "); 
     }
+    
+    private static void afficheMontantAPayer(ArrayList<Rent> tabs) {
+        
+        Rent rent = null;
+        print("*************** Retour Véhicule ***************");
+        do {        
+            print("\nSaisissez le numéro de location : ");
+            int noL = scan.nextInt();
+            rent = rechercheVehiculeLoue(tabs, noL);
+            if(rent == null){
+                print("\nLe numéro saisie n'existe pas, veuillez réessayer.");
+            }
+        }while(rent == null);
+        
+        print("\nLe montant à payer est de : " + rent.getCost());
+    }
+    
+    private static Rent rechercheVehiculeLoue(ArrayList<Rent> tabs, int noLoc){
+        Rent rent = null; 
+        
+        for(Rent tab : tabs) {
+            if (noLoc == tab.getCode()) {
+                rent = tab;
+            }
+        }
+        return rent; 
+    }
+    
 }
 
