@@ -94,8 +94,8 @@ public class LocationVoiture {
     }
     
     private static void afficheMontantAPayer(ArrayList<Rent> tabs) {
-        
         Rent rent = null;
+        
         print("*************** Retour Véhicule ***************");
         do {        
             print("\nSaisissez le numéro de location : ");
