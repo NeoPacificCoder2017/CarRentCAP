@@ -1,10 +1,4 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package locationvoiture;
-
 import java.util.*;
 
 /**
@@ -16,7 +10,7 @@ public class LocationVoiture {
     private static Scanner scan = new Scanner(System.in);
     
     public static void main(String[] args) {        
-        ArrayList<Rent> stockCars = new ArrayList<Rent>();
+        ArrayList<Rent> rents = new ArrayList<Rent>();
     }
     
     private static void print(Object a){
@@ -48,10 +42,5 @@ public class LocationVoiture {
             }
         }
         return rent; 
-    }
-    
-    private static void initNvlleVoiture(){
-        
-    }
-    
+    }    
 }
