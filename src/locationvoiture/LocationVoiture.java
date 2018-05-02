@@ -11,12 +11,12 @@ import java.util.Scanner;
 public class LocationVoiture {
 
     private static Scanner scan = new Scanner(System.in);
-    ArrayList<Cars> vehicle = new ArrayList<Cars>();
+    
     /**
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        
+      ArrayList<Cars> vehicles = new ArrayList<Cars>();
     }
     
     public static void print(Object a){
