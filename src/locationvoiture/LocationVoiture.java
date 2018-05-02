@@ -120,5 +120,12 @@ public class LocationVoiture {
         return rent; 
     }
     
+    private static void findVehicle(ArrayList<Cars> vehicles, String type){
+      int index = 0;
+      for(Cars vehicle : vehicles){
+        index++;
+        print("Le vehicule immatriculer " + vehicle.getImmatriculation() + " est bien présent");
+      }
+    }
 }
 
