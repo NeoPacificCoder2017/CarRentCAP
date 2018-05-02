@@ -13,7 +13,7 @@ public class LocationVoiture {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        
+      ArrayList<Cars> vehicles = new ArrayList<Cars>();
     }
     
     public static void print(Object a){
@@ -79,6 +79,18 @@ public class LocationVoiture {
       println("Liste des types de véhicule");
       println("Sélectionner le type de véhicule: \n\t 1. Citadine \n\t 2. Berline \n\t 3. SUV");
       print("Votre choix: "); 
+    }  
+    
+    /////////////////////////////////Affficher la liste des différents véhicule par type//////////////
+    
+    public static void listVehiculeByType(ArrayList<Cars> vehicles, String type){
+      int index = 0;
+      for(Cars vehicle : vehicles){
+        if(vehicle.getNom() == type && vehicle.isStatut()){
+          index++;
+          print(index + ". " + vehicle.getNbPassagerMax() + " " + vehicle.getPrixJour() + " disponibilité: " + vehicle.isStatut());
+        }
+      }
     }
     
     private static void afficheMontantAPayer(ArrayList<Rent> tabs) {
