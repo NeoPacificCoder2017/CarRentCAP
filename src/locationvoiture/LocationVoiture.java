@@ -46,6 +46,11 @@ public class LocationVoiture {
         // Création d'un nouveau véhicule
         Cars newCar = addCar();
         vehicles.add(newCar);
+        
+        //Création d'une nouvelle location
+        Rent newRent = newLocation();
+        rents.add(newRent);
+        displayRent();
     }
     
     public static void print(Object a){
