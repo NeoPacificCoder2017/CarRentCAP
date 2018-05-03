@@ -10,7 +10,6 @@ package locationvoiture;
  * @author eleve9
  */
 public class Cars {
-    
     protected int immatriculation, nbPassagerMax, prixJour, km, nbLocation;
     protected boolean statut;
     protected String type; //nom du modèle
