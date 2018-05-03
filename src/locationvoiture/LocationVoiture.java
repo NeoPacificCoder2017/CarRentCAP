@@ -27,6 +27,18 @@ public class LocationVoiture {
             customers.add(new Customers(prenoms[i], noms[i], ages[i], permis[i]));
         }
       
+        // test data véhicules
+        int[] immatriculations = new int[]{111111111, 222222222, 333333333, 444444444, 555555555, 666666666, 777777777, 888888888, 999999999, 1212121212, 1313131313, 1414141414, 1515151515, 1616161616, 1717171717};
+        int[] passagers = new int[]{5, 5, 5, 5, 3, 5, 3, 5, 3, 3, 3, 5, 5, 5, 5};
+        int[] tarifs = new int[]{7000, 7000, 7000, 7000, 7000, 7000, 7000, 7000, 7000, 7000, 7000, 7000, 7000, 7000, 7000};
+        
+        for(int i = 0; i < immatriculations.length; i++) {
+            vehicles.add(new Cars());
+            vehicles.get(i).setImmatriculation(immatriculations[i]);
+            vehicles.get(i).setNbPassagerMax(passagers[i]);
+            vehicles.get(i).setPrixJour(tarifs[i]);
+        }
+        
         // création d'un client
         Customers c = addNewCustomer();
         customers.add(c);
