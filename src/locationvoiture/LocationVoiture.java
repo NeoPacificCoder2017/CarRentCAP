@@ -50,7 +50,7 @@ public class LocationVoiture {
         //Création d'une nouvelle location
         Rent newRent = newLocation();
         rents.add(newRent);
-        displayRent();
+        displayRent(rents, value);
     }
     
     public static void print(Object a){
