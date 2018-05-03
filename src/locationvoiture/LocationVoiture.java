@@ -13,8 +13,23 @@ public class LocationVoiture {
      * @param args the command line arguments
      */   
     public static void main(String[] args) {
-      ArrayList<Cars> vehicles = new ArrayList<Cars>();
-      ArrayList<Rent> rents = new ArrayList<Rent>();
+        ArrayList<Cars> vehicles = new ArrayList<Cars>();
+        ArrayList<Rent> rents = new ArrayList<Rent>();
+        ArrayList<Customers> customers = new ArrayList<Customers>();
+
+        // test data clients
+        String[] noms = new String[]{"CHANSAUD", "HAUATA", "LYSAO", "MANA", "MAUI", "TAIE", "TARIHAA", "TKT", "TEPA", "TUHITI"};
+        String[] prenoms = new String[]{"Gaby", "Sabrina", "Miron", "Kévin", "Apetahi", "Parea", "Teraitea", "Cédric", "Vaiarii", "Christopher"};
+        int[] ages = new int[]{17, 17, 17, 17, 17, 17, 17, 17, 17, 17};
+        int[] permis = new int[]{11111, 22222, 33333, 44444, 55555, 66666, 77777, 88888, 99999, 14578};
+        
+        for(int i = 0; i < noms.length; i++) {
+            customers.add(new Customers(prenoms[i], noms[i], ages[i], permis[i]));
+        }
+      
+        // création d'un client
+        Customers c = addNewCustomer();
+        customers.add(c);
     }
     
     public static void print(Object a){
@@ -120,5 +135,13 @@ public class LocationVoiture {
         return rent; 
     }
     
+    private static void initNvlleVoiture(Cars newCar) {
+        print("\nImmatriculation du véhicule: ");
+        newCar.setImmatriculation(scan.nextInt());
+        print("\nNombre de passager ");
+        newCar.setNbPassagerMax(scan.nextInt());
+        print("\nTarif par jour: ");
+        newCar.setPrixJour(scan.nextInt());
+    }
 }
 

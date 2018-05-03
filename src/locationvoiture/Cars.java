@@ -21,14 +21,6 @@ public class Cars {
         this.statut = true; // true = dispo
     }
 
-    public Cars(int noImma, int nbPassagerMax, int prixJour, String type) {
-        this();
-        this.immatriculation = noImma;
-        this.nbPassagerMax = nbPassagerMax;
-        this.prixJour = prixJour;
-        this.type = type;
-    }
-
     public int getImmatriculation() {
         return this.immatriculation;
     }
