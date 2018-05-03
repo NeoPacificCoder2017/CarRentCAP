@@ -18,7 +18,7 @@ public class Rent {
     private Customers customer;
     private int period;
     private int cost;
-    
+
     public Rent(Cars car, Customers customer, int period) {
         
         this.code = COUNT++;

@@ -46,6 +46,9 @@ public class LocationVoiture {
         // Création d'un nouveau véhicule
         Cars newCar = addCar();
         vehicles.add(newCar);
+        
+        //Payer montant location
+        afficheMontantAPayer(rents);
     }
     
     public static void print(Object a){
@@ -138,6 +141,10 @@ public class LocationVoiture {
         }while(rent == null);
         
         print("\nLe montant à payer est de : " + rent.getCost());
+        
+        rent.getCar().setKm(50 * rent.getPeriod());//Permet d'ajouter 50 km par jour de location
+        rent.getCar().setStatut(true);//Permet de passer d'indisponible à disponible
+        rent.getCar().setNbLocation(rent.getCar().getNbLocation()++);
     }
     
     private static Rent rechercheVehiculeLoue(ArrayList<Rent> tabs, int noLoc){
