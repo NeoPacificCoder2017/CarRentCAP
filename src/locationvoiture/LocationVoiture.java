@@ -67,7 +67,6 @@ public class LocationVoiture {
     
     private static void displayRent(ArrayList<Rent> rents, int value) {
       Rent rent = rents.get(value);
-
       println("\n************** Location *******************");
       println("\n Location n°: " + rent.getCode() + "\n Voiture immatriculée: " + rent.getCar().getImmatriculation() + "\n Louée par: " + rent.getCustomer().getLastname() + " " + rent.getCustomer().getFirstname());
     }
@@ -88,7 +87,7 @@ public class LocationVoiture {
       for(Cars vehicle : vehicles){
         if(vehicle.getNom() == type && vehicle.isStatut()){
           index++;
-          print(index + ". " + vehicle.getNbPassagerMax() + " " + vehicle.getPrixJour() + " disponibilité: " + vehicle.isStatut());
+          println(index + ". " + vehicle.getNbPassagerMax() + " " + vehicle.getPrixJour() + " disponibilité: " + vehicle.isStatut());
         }
       }
     }
@@ -120,12 +119,20 @@ public class LocationVoiture {
         return rent; 
     }
     
-    private static void findVehicle(ArrayList<Cars> vehicles, String type){
+    private static Cars findVehicle(ArrayList<Cars> vehicles, String type, int id){
+      Cars car = null;
       int index = 0;
       for(Cars vehicle : vehicles){
-        index++;
-        print("Le vehicule immatriculer " + vehicle.getImmatriculation() + " est bien présent");
+        if(vehicle.getNom() == type && vehicle.isStatut()){
+          index++;
+          car = vehicle;
+          if(id == index){
+           println("Le vehicule séléctionner est " + vehicle.getImmatriculation());
+           break;
+          }
+        }
       }
+      return car;
     }
 }
 
