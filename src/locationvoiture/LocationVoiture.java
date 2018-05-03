@@ -135,5 +135,13 @@ public class LocationVoiture {
         return rent; 
     }
     
+    private static void initNvlleVoiture(Cars newCar) {
+        print("\nImmatriculation du véhicule: ");
+        newCar.setImmatriculation(scan.nextInt());
+        print("\nNombre de passager ");
+        newCar.setNbPassagerMax(scan.nextInt());
+        print("\nTarif par jour: ");
+        newCar.setPrixJour(scan.nextInt());
+    }
 }
 
