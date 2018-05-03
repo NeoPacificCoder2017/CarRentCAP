@@ -125,10 +125,9 @@ public class LocationVoiture {
       for(Cars vehicle : vehicles){
         if(vehicle.getNom() == type && vehicle.isStatut()){
           index++;
-          car = vehicle;
           if(id == index){
-           println("Le vehicule séléctionner est " + vehicle.getImmatriculation());
-           break;
+            car = vehicle;
+            break;
           }
         }
       }
