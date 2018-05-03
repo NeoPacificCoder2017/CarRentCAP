@@ -100,7 +100,7 @@ public class LocationVoiture {
     }
     
     private static void displayRent(ArrayList<Rent> rents, int value) {
-      Rent rent = rents.toArray()[value];
+      Rent rent = rents.get(value);
 
       println("\n************** Location *******************");
       println("\n Location n°: " + rent.getCode() + "\n Voiture immatriculée: " + rent.getCar().getImmatriculation() + "\n Louée par: " + rent.getCustomer().getLastname() + " " + rent.getCustomer().getFirstname());
