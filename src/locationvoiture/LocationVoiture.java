@@ -98,7 +98,6 @@ public class LocationVoiture {
     
     private static void displayRent(ArrayList<Rent> rents, int value) {
       Rent rent = rents.get(value);
-
       println("\n************** Location *******************");
       println("\n Location n°: " + rent.getCode() + "\n Voiture immatriculée: " + rent.getCar().getImmatriculation() + "\n Louée par: " + rent.getCustomer().getLastname() + " " + rent.getCustomer().getFirstname());
     }
@@ -119,7 +118,7 @@ public class LocationVoiture {
       for(Cars vehicle : vehicles){
         if(vehicle.getNom() == type && vehicle.isStatut()){
           index++;
-          print(index + ". " + vehicle.getNbPassagerMax() + " " + vehicle.getPrixJour() + " disponibilité: " + vehicle.isStatut());
+          println(index + ". " + vehicle.getNbPassagerMax() + " " + vehicle.getPrixJour() + " disponibilité: " + vehicle.isStatut());
         }
       }
     }
@@ -183,7 +182,21 @@ public class LocationVoiture {
         initNvlleVoiture(newCar);
         
         return newCar;
-        
+    }
+    
+    private static Cars findVehicle(ArrayList<Cars> vehicles, String type, int id){
+      Cars car = null;
+      int index = 0;
+      for(Cars vehicle : vehicles){
+        if(vehicle.getNom() == type && vehicle.isStatut()){
+          index++;
+          if(id == index){
+            car = vehicle;
+            break;
+          }
+        }
+      }
+      return car;
     }
 }
 
