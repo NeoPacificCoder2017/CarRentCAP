@@ -144,7 +144,7 @@ public class LocationVoiture {
         
         rent.getCar().setKm(50 * rent.getPeriod());//Permet d'ajouter 50 km par jour de location
         rent.getCar().setStatut(true);//Permet de passer d'indisponible à disponible
-        rent.getCar().setNbLocation(+1);
+        rent.getCar().setNbLocation(getNbLocation()++);
     }
     
     private static Rent rechercheVehiculeLoue(ArrayList<Rent> tabs, int noLoc){
