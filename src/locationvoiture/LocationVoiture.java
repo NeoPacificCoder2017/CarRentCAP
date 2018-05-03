@@ -42,6 +42,10 @@ public class LocationVoiture {
         // création d'un client
         Customers c = addNewCustomer();
         customers.add(c);
+        
+        // Création d'un nouveau véhicule
+        Cars newCar = addCar();
+        vehicles.add(newCar);
     }
     
     public static void print(Object a){
@@ -154,6 +158,32 @@ public class LocationVoiture {
         newCar.setNbPassagerMax(scan.nextInt());
         print("\nTarif par jour: ");
         newCar.setPrixJour(scan.nextInt());
+    }
+    
+    private static Cars addCar(){
+        Cars newCar = new Cars();
+        
+        listTypeVehicle();
+        int choix = scan.nextInt();
+        
+        switch(choix) {
+            case 1:
+                newCar = new Citadine();
+                break;
+            case 2:
+                newCar = new Berline();
+                break;
+            case 3:
+                newCar = new SUV();
+                break;
+            default:
+                print("\nDésolé ce type de voiture n'existe pas");
+        }
+        
+        initNvlleVoiture(newCar);
+        
+        return newCar;
+        
     }
 }
 
