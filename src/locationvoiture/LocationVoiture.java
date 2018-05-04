@@ -71,13 +71,13 @@ public class LocationVoiture {
                     rents.add(rent);
                     break;
                 case 4: //Payer montant location
-                    afficheMontantAPayer(rents);
+                    displayFinalPay(rents);
                     break;
                 default:
                     if(option == 0) {
-                        print("****************** Aurevoir *******************");
+                        println("****************** Aurevoir *******************");
                     } else {
-                        print("Choix incorrect.\n Veuillez sélectionner à nouveau une option.");                        
+                        println("Choix incorrect.\n Veuillez sélectionner à nouveau une option.");                        
                     }
             }           
         }  
@@ -95,10 +95,7 @@ public class LocationVoiture {
     //////////////////////////////Ajouter un nouveau client///////////////////////////////////////
 
     public static Customers addNewCustomer(){
-        println("*********************************"
-        + "\n*********************************");
-        println("Ajouter un nouveau client: ");
-
+        println("*************** Enregistrer nouveau client ***************");
         print("Nom: ");
         String lastName = scan.next();
 
@@ -126,7 +123,7 @@ public class LocationVoiture {
     }
     
     private static void displayMainMenu() {
-        println("\n*********************************");
+        println("\n************** Menu Principal *******************");
         println("Sélectionner une option \n\n\t 1. Acquérir voiture \n\t 2. Enregistrer nouveau client \n\t 3. Louer véhicule \n\t 4. Rendre véhicule \n\t 0. Quitter\n");
         print("Votre choix: ");
     }
@@ -139,8 +136,7 @@ public class LocationVoiture {
     /////////////////////////////////Affficher la liste des différents type de véhicuel//////////////
     
     private static void listTypeVehicle(){
-      println("\n*********************************");
-      println("Liste des types de véhicule");
+      println("*************** Liste des types de véhicule ***************");
       println("Sélectionner le type de véhicule: \n\t 1. Citadine \n\t 2. Berline \n\t 3. SUV");
       print("Votre choix: "); 
     }  
@@ -149,6 +145,7 @@ public class LocationVoiture {
     
     public static void listVehiculeByType(ArrayList<Cars> vehicles, String type){
       int index = 0;
+      println("*************** Liste Véhicule ***************");
       for(Cars vehicle : vehicles){
         if(vehicle.getNom() == type && vehicle.isStatut()){
           index++;
@@ -165,14 +162,14 @@ public class LocationVoiture {
         }
     }
     
-    private static void afficheMontantAPayer(ArrayList<Rent> tabs) {
+    private static void displayFinalPay(ArrayList<Rent> tabs) {
         Rent rent = null;
         
-        print("*************** Retour Véhicule ***************");
+        println("*************** Retour Véhicule ***************");
         do {        
             print("\nSaisissez le numéro de location : ");
             int noL = scan.nextInt();
-            rent = rechercheVehiculeLoue(tabs, noL);
+            rent = searchVehicleRent(tabs, noL);
             if(rent == null){
                 print("\nLe numéro saisie n'existe pas, veuillez réessayer.");
             }
@@ -185,7 +182,7 @@ public class LocationVoiture {
         rent.getCar().setNbLocation(rent.getCar().getNbLocation() + 1);
     }
     
-    private static Rent rechercheVehiculeLoue(ArrayList<Rent> tabs, int noLoc){
+    private static Rent searchVehicleRent(ArrayList<Rent> tabs, int noLoc){
         Rent rent = null; 
         
         for(Rent tab : tabs) {
@@ -196,7 +193,7 @@ public class LocationVoiture {
         return rent; 
     }
     
-    private static void initNvlleVoiture(Cars newCar) {
+    private static void initNewCar(Cars newCar) {
         print("\nImmatriculation du véhicule: ");
         newCar.setImmatriculation(scan.nextInt());
         print("\nNombre de passager ");
@@ -225,7 +222,7 @@ public class LocationVoiture {
                 print("\nDésolé ce type de voiture n'existe pas");
         }
         
-        initNvlleVoiture(newCar);
+        initNewCar(newCar);
         
         return newCar;
         
@@ -235,8 +232,10 @@ public class LocationVoiture {
         int idType = 0;
         String type = "";
         
+        println("*************** Louer Véhicule ***************");
         // Sélectionne un client
         listCustomer(customers);
+        print("Votre choix: ");
         int idCustomer = scan.nextInt();
         Customers customer = customers.get(idCustomer-1);
         
@@ -255,10 +254,11 @@ public class LocationVoiture {
         
         // Liste de véhicules 
         listVehiculeByType(cars, type);
+        print("Votre choix: ");
         int choixCar = scan.nextInt();
         
         // Retrouver voiture
-        Cars car = retrouverVoiture(cars, type, choixCar);
+        Cars car = findCar(cars, type, choixCar);
                 
         // Durée de location
         print("\nDurée de location : ");
@@ -270,7 +270,7 @@ public class LocationVoiture {
         return new Rent(car, customer, duree);
     }
     
-    private static Cars retrouverVoiture(ArrayList<Cars> cars, String type, int choixCar){
+    private static Cars findCar(ArrayList<Cars> cars, String type, int choixCar){
         int index = 0;
         Cars car = null;
         
