@@ -40,7 +40,6 @@ public class LocationVoiture {
             vehicles.get(i).setPrixJour(tarifs[i]);
         }
         
-<<<<<<< HEAD
         while (option != 0) {
             displayMainMenu();
             option = scan.nextInt();
@@ -69,8 +68,8 @@ public class LocationVoiture {
                         print("Choix incorrect.\n Veuillez sélectionner à nouveau une option.");                        
                     }
             }           
-        }        
-=======
+        }  
+        
         // création d'un client
         Customers c = addNewCustomer();
         customers.add(c);
@@ -83,7 +82,6 @@ public class LocationVoiture {
         Rent rent = addNewRent(customers, vehicles);
         rents.add(rent);
         
->>>>>>> 13f6b48b7df8dc71885d795bd8d4b0fa639da831
     }
     
     public static void print(Object a){
