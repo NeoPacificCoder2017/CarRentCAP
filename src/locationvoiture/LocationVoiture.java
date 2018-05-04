@@ -180,7 +180,7 @@ public class LocationVoiture {
         
         print("\nLe montant à payer est de : " + rent.getCost());
         
-        rent.getCar().setKm(50 * rent.getPeriod());//Permet d'ajouter 50 km par jour de location
+        rent.getCar().setKm(rent.getCar().getKm() + 50 * rent.getPeriod());//Permet d'ajouter 50 km par jour de location
         rent.getCar().setStatut(true);//Permet de passer d'indisponible à disponible
         rent.getCar().setNbLocation(rent.getCar().getNbLocation() + 1);
     }
