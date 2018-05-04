@@ -34,7 +34,17 @@ public class LocationVoiture {
         int[] tarifs = new int[]{7000, 7000, 7000, 7000, 7000, 7000, 7000, 7000, 7000, 7000, 7000, 7000, 7000, 7000, 7000};
         
         for(int i = 0; i < immatriculations.length; i++) {
-            vehicles.add(new Cars());
+            Cars c = new Cars();
+            
+            if (i < 5) {
+                c = new Berline(); 
+            } else if (5 <= i && i < 10) {
+                c = new Citadine();
+            } else {
+                c = new SUV();
+            }
+            
+            vehicles.add(c);
             vehicles.get(i).setImmatriculation(immatriculations[i]);
             vehicles.get(i).setNbPassagerMax(passagers[i]);
             vehicles.get(i).setPrixJour(tarifs[i]);
@@ -55,8 +65,10 @@ public class LocationVoiture {
                     customers.add(c);
                     listCustomer(customers);
                     break;
-                case 3:
-                    //
+                case 3: // Création d'une nouvelle location de véhicule
+                    Rent rent = addNewRent(customers, vehicles);                    
+                    displayRent(rent);
+                    rents.add(rent);
                     break;
                 case 4: //Payer montant location
                     afficheMontantAPayer(rents);
@@ -69,19 +81,6 @@ public class LocationVoiture {
                     }
             }           
         }  
-        
-        // création d'un client
-        Customers c = addNewCustomer();
-        customers.add(c);
-        
-        // Création d'un nouveau véhicule
-        Cars newCar = addCar();
-        vehicles.add(newCar);
-        
-        // Création d'une nouvelle location de véhicule
-        Rent rent = addNewRent(customers, vehicles);
-        rents.add(rent);
-        
     }
     
     public static void print(Object a){
@@ -111,7 +110,7 @@ public class LocationVoiture {
 
         print("N° Permis: ");
         int numberLicence = scan.nextInt();
-        return new Customers(firstName, lastName, age, numberLicence);
+        return new Customers(lastName, firstName, age, numberLicence);
     }
     
     ////////////////////////////Affichage des client enregistrer/////////////////////////////////////
@@ -132,11 +131,9 @@ public class LocationVoiture {
         print("Votre choix: ");
     }
     
-    private static void displayRent(ArrayList<Rent> rents, int value) {
-      Rent rent = rents.get(value);
-
+    private static void displayRent(Rent r) {
       println("\n************** Location *******************");
-      println("\n Location n°: " + rent.getCode() + "\n Voiture immatriculée: " + rent.getCar().getImmatriculation() + "\n Louée par: " + rent.getCustomer().getLastname() + " " + rent.getCustomer().getFirstname());
+      println("\n Location n°: " + r.getCode() + "\n Voiture immatriculée: " + r.getCar().getImmatriculation() + "\n Louée par: " + r.getCustomer().getLastname() + " " + r.getCustomer().getFirstname());
     }
     
     /////////////////////////////////Affficher la liste des différents type de véhicuel//////////////
@@ -164,7 +161,7 @@ public class LocationVoiture {
         int index = 0;
         for(Cars vehicle : vehicles){
             index++;
-            println("\t " + index + ". Voiture immatriculée " + vehicle.getImmatriculation() + " de type " + vehicle.getNom() + " - " + vehicle.getNbPassagerMax() + " personnes - " + vehicle.getKm() + " Km - " + vehicle.getPrixJour() + " XPF/Jour");
+            println("\t " + index + ". Voiture immatriculée " + vehicle.getImmatriculation() + " de type " + vehicle.getNom() + " - " + vehicle.getNbPassagerMax() + " personnes - " + vehicle.getKm() + " Km - " + vehicle.getPrixJour() + " XPF/Jour" + " - état: " + vehicle.isStatut());
         }
     }
     

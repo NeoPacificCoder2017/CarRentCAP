@@ -11,7 +11,7 @@ package locationvoiture;
  */
 public class Rent {
     
-    private static int COUNT = 0;
+    private static int COUNT = 1;
     
     private int code;
     private Cars car;
