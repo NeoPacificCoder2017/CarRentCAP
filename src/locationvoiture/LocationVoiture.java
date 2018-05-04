@@ -279,6 +279,7 @@ public class LocationVoiture {
               index++;
               if(index == choixCar){
                   car = vehicle;
+                  break;
               }
             }
         }
