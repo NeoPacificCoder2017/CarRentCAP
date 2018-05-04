@@ -40,6 +40,7 @@ public class LocationVoiture {
             vehicles.get(i).setPrixJour(tarifs[i]);
         }
         
+<<<<<<< HEAD
         while (option != 0) {
             displayMainMenu();
             option = scan.nextInt();
@@ -69,6 +70,20 @@ public class LocationVoiture {
                     }
             }           
         }        
+=======
+        // création d'un client
+        Customers c = addNewCustomer();
+        customers.add(c);
+        
+        // Création d'un nouveau véhicule
+        Cars newCar = addCar();
+        vehicles.add(newCar);
+        
+        // Création d'une nouvelle location de véhicule
+        Rent rent = addNewRent(customers, vehicles);
+        rents.add(rent);
+        
+>>>>>>> 13f6b48b7df8dc71885d795bd8d4b0fa639da831
     }
     
     public static void print(Object a){
@@ -219,6 +234,61 @@ public class LocationVoiture {
         
         return newCar;
         
+    }
+    
+    private static Rent addNewRent(ArrayList<Customers> customers, ArrayList<Cars> cars){
+        int idType = 0;
+        String type = "";
+        
+        // Sélectionne un client
+        listCustomer(customers);
+        int idCustomer = scan.nextInt();
+        Customers customer = customers.get(idCustomer-1);
+        
+        // Sélectionne le type de véhicule
+        listTypeVehicle();
+        idType = scan.nextInt();
+        do {
+            switch(idType){
+                case 1 : type = "Citadine"; break;
+                case 2 : type = "Berline"; break;
+                case 3 : type = "SUV"; break;
+                default : print("Choix incorrect. \nVeuillez sélectionner à nouveau un type.");
+                          idType = 0;
+            } 
+        }while(idType == 0);
+        
+        // Liste de véhicules 
+        listVehiculeByType(cars, type);
+        int choixCar = scan.nextInt();
+        
+        // Retrouver voiture
+        Cars car = retrouverVoiture(cars, type, choixCar);
+                
+        // Durée de location
+        print("\nDurée de location : ");
+        int duree = scan.nextInt(); 
+        
+        // Changer Status
+        car.setStatut(false);
+        
+        return new Rent(car, customer, duree);
+    }
+    
+    private static Cars retrouverVoiture(ArrayList<Cars> cars, String type, int choixCar){
+        int index = 0;
+        Cars car = null;
+        
+        for(Cars vehicle : cars){
+            if(vehicle.getNom() == type && vehicle.isStatut()){
+              index++;
+              if(index == choixCar){
+                  car = vehicle;
+              }
+            }
+        }
+        
+        return car;
     }
 }
 
