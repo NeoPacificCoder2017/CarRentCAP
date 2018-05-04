@@ -13,6 +13,7 @@ public class LocationVoiture {
      * @param args the command line arguments
      */   
     public static void main(String[] args) {
+        int option = -1;
         ArrayList<Cars> vehicles = new ArrayList<Cars>();
         ArrayList<Rent> rents = new ArrayList<Rent>();
         ArrayList<Customers> customers = new ArrayList<Customers>();
@@ -39,16 +40,35 @@ public class LocationVoiture {
             vehicles.get(i).setPrixJour(tarifs[i]);
         }
         
-        // création d'un client
-        Customers c = addNewCustomer();
-        customers.add(c);
-        
-        // Création d'un nouveau véhicule
-        Cars newCar = addCar();
-        vehicles.add(newCar);
-        
-        //Payer montant location
-        afficheMontantAPayer(rents);
+        while (option != 0) {
+            displayMainMenu();
+            option = scan.nextInt();
+            
+            switch(option) {
+                case 1: // Création d'un nouveau véhicule             
+                    Cars newCar = addCar();
+                    vehicles.add(newCar);
+                    listVehicule(vehicles);
+                    break;
+                case 2: // création d'un client 
+                    Customers c = addNewCustomer();
+                    customers.add(c);
+                    listCustomer(customers);
+                    break;
+                case 3:
+                    //
+                    break;
+                case 4: //Payer montant location
+                    afficheMontantAPayer(rents);
+                    break;
+                default:
+                    if(option == 0) {
+                        print("****************** Aurevoir *******************");
+                    } else {
+                        print("Choix incorrect.\n Veuillez sélectionner à nouveau une option.");                        
+                    }
+            }           
+        }        
     }
     
     public static void print(Object a){
@@ -86,7 +106,7 @@ public class LocationVoiture {
     public static void listCustomer(ArrayList<Customers> customers){
       int index = 0;
       String space = " ";
-      println("Voici la liste des types des clients1: ");
+      println("Voici la liste des clients: ");
         for( Customers customer : customers ){
           index++;
             println("\n" + index + space + customer.getLastname() + space + customer.getFirstname() + space + customer.getAge());
@@ -122,9 +142,17 @@ public class LocationVoiture {
       for(Cars vehicle : vehicles){
         if(vehicle.getNom() == type && vehicle.isStatut()){
           index++;
-          print(index + ". " + vehicle.getNbPassagerMax() + " " + vehicle.getPrixJour() + " disponibilité: " + vehicle.isStatut());
+          println("\t " + index + ". Voiture immatriculée " + vehicle.getImmatriculation() + " de type " + vehicle.getNom() + " - " + vehicle.getNbPassagerMax() + " personnes - " + vehicle.getKm() + " Km - " + vehicle.getPrixJour() + " XPF/Jour");
         }
       }
+    }
+    
+    public static void listVehicule(ArrayList<Cars> vehicles){
+        int index = 0;
+        for(Cars vehicle : vehicles){
+            index++;
+            println("\t " + index + ". Voiture immatriculée " + vehicle.getImmatriculation() + " de type " + vehicle.getNom() + " - " + vehicle.getNbPassagerMax() + " personnes - " + vehicle.getKm() + " Km - " + vehicle.getPrixJour() + " XPF/Jour");
+        }
     }
     
     private static void afficheMontantAPayer(ArrayList<Rent> tabs) {
@@ -144,7 +172,7 @@ public class LocationVoiture {
         
         rent.getCar().setKm(50 * rent.getPeriod());//Permet d'ajouter 50 km par jour de location
         rent.getCar().setStatut(true);//Permet de passer d'indisponible à disponible
-        rent.getCar().setNbLocation(rent.getCar().getNbLocation()++);
+        rent.getCar().setNbLocation(rent.getCar().getNbLocation() + 1);
     }
     
     private static Rent rechercheVehiculeLoue(ArrayList<Rent> tabs, int noLoc){
