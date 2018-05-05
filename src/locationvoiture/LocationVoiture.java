@@ -1,5 +1,9 @@
 package locationvoiture;
+import java.sql.SQLException;
 import java.util.*;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import static locationvoiture.SQLRules.sauverEnBase;
 
 /**
  *
@@ -12,7 +16,7 @@ public class LocationVoiture {
     /**
      * @param args the command line arguments
      */   
-    public static void main(String[] args) {
+    public static void main(String[] args) throws SQLException {
         int option = -1;
         ArrayList<Cars> vehicles = new ArrayList<Cars>();
         ArrayList<Rent> rents = new ArrayList<Rent>();
@@ -32,7 +36,6 @@ public class LocationVoiture {
         int[] immatriculations = new int[]{111111111, 222222222, 333333333, 444444444, 555555555, 666666666, 777777777, 888888888, 999999999, 1212121212, 1313131313, 1414141414, 1515151515, 1616161616, 1717171717};
         int[] passagers = new int[]{5, 5, 5, 5, 3, 5, 3, 5, 3, 3, 3, 5, 5, 5, 5};
         int[] tarifs = new int[]{7000, 7000, 7000, 7000, 7000, 7000, 7000, 7000, 7000, 7000, 7000, 7000, 7000, 7000, 7000};
-        
         for(int i = 0; i < immatriculations.length; i++) {
             Cars c = new Cars();
             
@@ -64,6 +67,8 @@ public class LocationVoiture {
                     Customers c = addNewCustomer();
                     customers.add(c);
                     listCustomer(customers);
+                    addCustomerDB(customers);
+                    
                     break;
                 case 3: // Création d'une nouvelle location de véhicule
                     Rent rent = addNewRent(customers, vehicles);                    
@@ -120,6 +125,12 @@ public class LocationVoiture {
           index++;
             println("\n" + index + space + customer.getLastname() + space + customer.getFirstname() + space + customer.getAge());
         }
+    }
+    
+    public static void addCustomerDB(ArrayList<Customers> customers) throws SQLException{
+      for( Customers customer : customers ){
+        sauverEnBase( customer.getLastname(), customer.getFirstname(), customer.getAge(), customer.getNumLicence());
+      }
     }
     
     private static void displayMainMenu() {
@@ -286,5 +297,6 @@ public class LocationVoiture {
         
         return car;
     }
+
 }
 
